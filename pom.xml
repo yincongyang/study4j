@@ -9,7 +9,37 @@
 	<name>父工程</name>
 	<modules>
 		<module>study4j-utils</module>
+		<module>study4j-base</module>
 	</modules>
+
+	<!-- 和度maven私服地址 start -->
+	<repositories>
+		<repository>
+			<id>Hedu</id>
+			<name>Hedu</name>
+			<url>http://58.213.72.26:8101/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>Hedu</id>
+			<name>Hedu</name>
+			<url>http://58.213.72.26:8101/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<!-- 和度maven私服地址 end -->
 
 	<properties>
 		<!-- framework version -->
