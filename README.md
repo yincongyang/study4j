@@ -1,8 +1,14 @@
 #java学习清单#
 
+- [ ] java基础
+  - [x] 基础类型学习
+  - [ ] java集合类
+  - [ ] IO
+  - [ ] HTTP
+  - [ ] 多线程
 - [ ] 缓存
   - [x] 缓存管理器  2017/6/11
-  - [ ] redis/codis
+  - [x] redis/codis
   - [ ] guava内存缓存
   - [ ] 文件缓存
 - [ ] guava
