@@ -50,9 +50,9 @@ public class ArrayListTest {
 			list1.add(i);
 		Integer[] resArr = new Integer[0];
 		//resArr = (Integer[]) list1.toArray();//返回Object[]，不能向下转型 bad
-		resArr = vectorToArray1(list1);
-		resArr = vectorToArray2(list1);//(Integer[]) list1.toArray(new Integer[0]);//recommend good
-		resArr = vectorToArray3(list1);
+		resArr = arrayListToArray1(list1);
+		resArr = arrayListToArray2(list1);//(Integer[]) list1.toArray(new Integer[0]);//recommend good
+		resArr = arrayListToArray3(list1);
 
 		/**
 		 * ArrayList删除步骤，会将其后面所有的值往前挪一位，
@@ -108,20 +108,20 @@ public class ArrayListTest {
 	}
 
 	// toArray(T[] contents)调用方式一
-	public static Integer[] vectorToArray1(ArrayList<Integer> v) {
+	public static Integer[] arrayListToArray1(ArrayList<Integer> v) {
 		Integer[] newText = new Integer[v.size()];
 		v.toArray(newText);
 		return newText;
 	}
 
 	// toArray(T[] contents)调用方式二。最常用！
-	public static Integer[] vectorToArray2(ArrayList<Integer> v) {
+	public static Integer[] arrayListToArray2(ArrayList<Integer> v) {
 		Integer[] newText = (Integer[]) v.toArray(new Integer[0]);
 		return newText;
 	}
 
 	// toArray(T[] contents)调用方式三
-	public static Integer[] vectorToArray3(ArrayList<Integer> v) {
+	public static Integer[] arrayListToArray3(ArrayList<Integer> v) {
 		Integer[] newText = new Integer[v.size()];
 		Integer[] newStrings = (Integer[]) v.toArray(newText);
 		return newStrings;

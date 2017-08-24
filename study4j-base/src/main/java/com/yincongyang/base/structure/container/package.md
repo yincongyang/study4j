@@ -1,4 +1,4 @@
-# java容器类学习笔记
+# java集合总结
 
 ## 主要集合简介
 ```
@@ -83,7 +83,8 @@
 　　     (即枚举值在枚举类中的定义顺序)
 ```
 
-## fast-fail机制
+## 关于集合类的一些特性和接口说明
+### fast-fail机制
 “快速失败”也就是fail-fast，它是Java集合的一种错误检测机制。当多个线程对集合进行结构上的改变的操作时，有可能会产生fail-fast机制。
 其目的是为了保证集合在遍历迭代期间，其结构不会发生变化。
 具有fast-fail特征的集合：
@@ -93,13 +94,61 @@
 - List:(ArrayList,LinkedList,Vector(线程安全))
 - 使用Collections.synchronizedXXX() 创建的线程安全的集合也是 Fail-fast
 
+### Iterator和Enumeration比较
+- 函数接口不同
+  Enumeration只有2个函数接口。通过Enumeration，我们只能读取集合的数据，而不能对数据进行修改。
+  Iterator只有3个函数接口。Iterator除了能读取集合的数据之外，也能数据进行删除操作。
+- Iterator支持fail-fast机制，而Enumeration不支持。
+  Enumeration 是JDK 1.0添加的接口。使用到它的函数包括Vector、Hashtable、Stack等类，这些类都是JDK 1.0中加入的，Enumeration存在的目的就是为它们提供遍历接口。Enumeration本身并没有支持同步，而在Vector、Hashtable实现Enumeration时，添加了同步。
+  而Iterator 是JDK 1.2才添加的接口，它也是为了HashMap、ArrayList等集合提供遍历接口。Iterator是支持fail-fast机制的：当多个线程对同一个集合的内容进行操作时，就可能会产生fail-fast事件。
+
+### Comparable和Comparator比较
+- Comparable 是排序接口。类似于“内部排序器”。
+  若一个类实现了Comparable接口，就意味着“该类支持排序”。即然实现Comparable接口的类支持排序，假设现在存在“实现Comparable接口的类的对象的List列表(或数组)”，则该List列表(或数组)可以通过 Collections.sort（或 Arrays.sort）进行排序。
+  此外，“实现Comparable接口的类的对象”可以用作“有序映射(如TreeMap)”中的键或“有序集合(TreeSet)”中的元素，而不需要指定比较器。
+- Comparator 是比较器接口。类似于“外部比较器”。
+  我们若需要控制某个类的次序，而该类本身不支持排序(即没有实现Comparable接口)；那么，我们可以建立一个“该类的比较器”来进行排序。这个“比较器”只需要实现Comparator接口即可。 
+  也就是说，我们可以通过“实现Comparator类来新建一个比较器”，然后通过该比较器对类进行排序。
+- 排序方式：Comparable：Collections.sort(List)|| Arrays.sort(Arr) 
+          Comparator: Collections.sort(List,Comparator)|| Arrays.sort(Arr,Comparator) 
 
 ## List
 ### ArrayList
 特点：
 - 可自动扩展的数组，故支持随机访问
 - 不同步
-- 删除步骤，会将其后面所有的值往前挪一位，会造成下标变化，故遍历时需注意
+- 删除步骤，会将其后面所有的值往前挪一位，会造成下标变化，
+- 迭代推荐使用for(index)，但删除推荐使用Iteroter(不会由于下标变化，造成漏删)
+
+### LinkedList
+特点：
+- 数据结构：双向链表（用head节点连接首尾）
+- 不同步
+- fail-fast机制
+- 尽量不要用随机访问去插入或者访问元素：即LinkedList.get(),LinkedList.set()
+- 迭代推荐使用Iteroter，避免使用随机访问去插入或者访问元素：即LinkedList.get(),LinkedList.set()
+
+### Vector
+特点：
+- 数据结构：可自动扩展的数组
+- 同步，线程安全
+- fail-fast机制
+- 支持通过Enumeration进行迭代
+- 其余特点同ArrayList
+
+### Stack
+特点：
+- 数据结构：继承自Vector，故也是数组
+- 同步，线程安全
+- fail-fast机制
+- LIFO  position[1,n] index[0,n-1]
+
+### List使用场景总结
+- 对于需要快速插入，删除元素，应该使用LinkedList。
+- 对于需要快速随机访问元素，应该使用ArrayList。
+- 对于“单线程环境” 或者 “多线程环境，但List仅仅只会被单个线程操作”，此时应该使用非同步的类(如ArrayList)。
+     对于“多线程环境，且List可能同时被多个线程操作”，此时，应该使用同步的类(如Vector)。
+
 
 ## Map
 ### HashMap与Hashtable的异同
@@ -112,7 +161,7 @@
 - Hashtable不允许 null 值(key 和 value 都不可以)，HashMap允许 null 值(key和value都可以)。
 - Hashtable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。
 - 哈希值的使用不同，Hashtable直接使用对象的hashCode，hashmap是hash(hashcode)
-- 另一个区别是HashMap的迭代器(Iterator)是fail-fast迭代器，而Hashtable的enumerator迭代器不是fail-fast的。所以当有其它线程改变了HashMap的结构（增加或者移除元素），将会抛出ConcurrentModificationException，但迭代器本身的remove()方法移除元素则不会抛出ConcurrentModificationException异常。但这并不是一个一定发生的行为，要看JVM。
+- 另一个区别是HashMap的迭代器(Iterator)是fail-fast迭代器，而Hashtable的Enumeration迭代器不是fail-fast的。所以当有其它线程改变了HashMap的结构（增加或者移除元素），将会抛出ConcurrentModificationException，但迭代器本身的remove()方法移除元素则不会抛出ConcurrentModificationException异常。但这并不是一个一定发生的行为，要看JVM。
 - Enumeration和Iterator的区别：Iterator有fail-fast机制，而Enumeration没有。
 - Hashtable继承自Dictionary(已过时)类，HashMap继承自AbstractMap(新的标准)类
 
@@ -120,18 +169,32 @@
 - 非多线程环境推荐用HashMap，多线程环境推荐使用带有同步的Map，尽量不要用Hashtable。
 
 ### LinkedHashMap
-继承自HashMap：唯一区别是其额外维护了一个双向链表来实现顺序性。
-
 特点：
-```
-按照插入顺序输出：new LinkedHashMap()：可以在迭代中使用LinkedHashMap.get(key)
-按照访问顺序输出：new LinkedHashMap(int initialCapacity,float loadFactor,boolean accessOrder) ：则在迭代时使用了LinkedHashMap.get(key)也会造成fail-fast
-
-```
+- 继承自HashMap：唯一区别是其在每个节点上除了存储值以外，额外存储了该值得下个节点和上个节点（即在hashmap的基础上维护了一个双向链表）。
+- 按照插入顺序输出：new LinkedHashMap()：可以在迭代中使用LinkedHashMap.get(key)
+- 按照访问顺序输出：new LinkedHashMap(int initialCapacity,float loadFactor,boolean accessOrder) ：则在迭代时使用了LinkedHashMap.get(key)也会造成fail-fast
 
 ### TreeMap
 - 数据结构：红黑树（Red-Black tree）实现。
 - 排序：根据key自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。
 - 基本操作 containsKey、get、put 和 remove 的时间复杂度是 log(n) 。
 - 非同步，Iterator是fail-fast的。
+
+### WeakHashMap
+- 使用方式上同HashMap，只是其存储的key是弱引用，随时有可能被GC回收。
+
+## Set
+### HashSet
+- 继承自Collection
+- 主要特点：不允许重复，无序
+- 基于HashMap的key实现：故允许使用 null 元素、不允许重复、无序、非同步、fail-fast
+
+### TreeSet
+- 继承自Collection
+- 主要特点：不允许重复，有序
+- 基于TreeSet的key实现：故不允许使用null元素、不允许重复、有序、非同步、fail-fast
+- 支持按照自然排序或者可实现Comparable实现自定义排序
+
+
+参考文章:[Java 集合系列](http://www.cnblogs.com/skywang12345/p/3323085.html)
 
