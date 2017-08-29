@@ -11,7 +11,7 @@ java io系统的设计初衷，就是为了实现“文件、控制台、网络�
       b) 按照“流”中处理数据的单位，可以将其区分为：字节流和字符流。在java中，字节是占1个Byte，即8位；而字符是占2个Byte，即16位。而且，需要注意的是，java的字节是有符号类型，而字符是无符号类型！
 
 ## java.io包下主要类结构
-![](https://github.com/yincongyang/study4j/tree/master/study4j-base/src/main/resources/img/javaIO.png)
+![](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/resources/img/javaIO.png)
 
 ## 字节流简介
 ### InputStream
