@@ -123,7 +123,7 @@ RandomAccessFile共有4种模式："r", "rw", "rws"和"rwd"。
 效果等同于split,不推荐使用
 
 ## IOException
-- 在进行流操作时，需要时刻注意对于IOException的处理。标准异常处理见[代码](../excetion/IOExceptionExample.java)
+- 在进行流操作时，需要时刻注意对于IOException的处理。标准异常处理见[代码](./excetion/IOExceptionExample.java)
 - 及时进行close()操作。
 - 对于使用了缓存类，需要及时进行flush()操作
 
