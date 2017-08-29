@@ -12,32 +12,36 @@ study4j/(父工程)
      |--structure/(数据结构学习)
         |--basetype/(基本数据类型学习)
         |--container/(容器类学习)
+     |--io/(java io流学习)
+     |--nio/(java nio学习)
   |--study4j-utils/(常用工具类封装)
   |--study4j-spider/(个人爬虫项目TODO)
 ```
 
 
 ## java基础
-- [基础类型总结](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/structure/basetype/package.md),[对应代码](https://github.com/yincongyang/study4j/tree/master/study4j-base/src/main/java/com/yincongyang/base/structure/basetype)
-- [容器类总结](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/structure/container/package.md),[对应代码](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/structure/container)
+- [基础类型总结](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/structure/basetype/package.md)：[相关代码](https://github.com/yincongyang/study4j/tree/master/study4j-base/src/main/java/com/yincongyang/base/structure/basetype)
+- [容器类总结](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/structure/container/package.md)：[相关代码](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/structure/container)
+- [Java IO总结](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/io/readme.md)：[相关代码](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/io)
 
 ## 阅读书单
 - Think in java
 - Effective Java2
 - Java并发编程实战
+- Guava官方文档
 
 ## TODO
 - [ ] java基础
   - [x] 基础类型学习
   - [x] java集合类
-  - [ ] IO
-  - [ ] HTTP
+  - [x] IO
+  - [ ] NIO
   - [ ] 多线程
 - [ ] 缓存
-  - [x] 缓存管理器  2017/6/11
+  - [x] 缓存管理器
   - [x] redis/codis
-  - [ ] guava内存缓存
-  - [ ] 文件缓存
+  - [x] 文件缓存
+  - [ ] 内存缓存
 - [ ] guava
   - [ ] 集合
   - [ ] IO
