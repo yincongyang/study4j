@@ -5,11 +5,11 @@
 	<artifactId>study4j</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>父工程</name>
 	<modules>
 		<module>study4j-utils</module>
 		<module>study4j-base</module>
     <module>study4j-design</module>
+    <module>study4j-guava</module>
   </modules>
 
 	<!-- 和度maven私服地址 start -->
@@ -17,7 +17,8 @@
 		<repository>
 			<id>Hedu</id>
 			<name>Hedu</name>
-			<url>http://58.213.72.26:8101/nexus/content/groups/public/</url>
+			<!--<url>http://58.213.72.26:8101/nexus/content/groups/public/</url>-->
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -30,7 +31,8 @@
 		<pluginRepository>
 			<id>Hedu</id>
 			<name>Hedu</name>
-			<url>http://58.213.72.26:8101/nexus/content/groups/public/</url>
+			<!--<url>http://58.213.72.26:8101/nexus/content/groups/public/</url>-->
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>

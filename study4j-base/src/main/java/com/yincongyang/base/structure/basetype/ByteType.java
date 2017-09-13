@@ -5,6 +5,16 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class ByteType {
+
+	@Test
+	public void plusTest() {
+		byte a = 127;
+		byte b = 12;
+		b += a;
+		//b = a + b;//保错，byte，char，short运算时会在自动提升至int
+		System.out.println(b);
+	}
+
 	@Test
 	public void test() {
 		//前提：在java中，默认都是int型  

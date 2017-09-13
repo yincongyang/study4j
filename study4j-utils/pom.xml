@@ -6,7 +6,6 @@
 	<groupId>com.yincongyang</groupId>
 	<artifactId>study4j-utils</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>java 常用工具类编写</name>
 
 	<!-- Spring Boot 启动父依赖 -->
 	<parent>

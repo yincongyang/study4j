@@ -4,9 +4,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * 运行期类型鉴定（RTTI）
+ * 
  * java 类型转换测试
  * - 子类转成父类，完全没有问题，直接转换就行
  * - 父类转成子类，则需要使用强制类型转换，且在运行期会检查内存中对象是否真的是子类型。若不是，则会报ClassCastException。
+ * 
+ * RTTI的用处
+ * - RMI中可用于解析远程对象：反射。
+ * 
+ * 常用关键字：instanceOf isInstance等
  * @author yincongyang
  *
  */
