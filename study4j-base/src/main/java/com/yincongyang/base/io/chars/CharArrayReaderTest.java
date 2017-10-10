@@ -31,7 +31,7 @@ public class CharArrayReaderTest {
 			// 从字符数组流中读取5个字符
 			for (int i = 0; i < LEN; i++) {
 				// 若能继续读取下一个字符，则读取下一个字符
-				if (car.ready() == true) {
+				if (car.ready()) {
 					// 读取“字符流的下一个字符”
 					char tmp = (char) car.read();
 					System.out.printf("%d : %c\n", i, tmp);

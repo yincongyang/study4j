@@ -52,7 +52,7 @@ public class ByteArrayOutputStreamTest {
 		// 将baos写入到另一个输出流中
 		try {
 			ByteArrayOutputStream baos2 = new ByteArrayOutputStream();
-			baos.writeTo((OutputStream) baos2);
+			baos.writeTo(baos2);
 			System.out.printf("baos2=%s\n", baos2);
 		} catch (IOException e) {
 			e.printStackTrace();

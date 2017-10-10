@@ -17,7 +17,7 @@ public class RateLimitTest {
 
 	private RateLimiter limiter = null;
 
-	public RateLimitTest(double limit) {
+	public RateLimitTest( double limit) {
 		this.limiter = RateLimiter.create(limit);
 	}
 
@@ -31,6 +31,7 @@ public class RateLimitTest {
 
 	public static void main(String[] args) throws InterruptedException {
 		RateLimitTest test = new RateLimitTest(0.2);
+		RateLimitTest test1 = new RateLimitTest(0.3);
 		Thread.sleep(10000);
 		for (int i = 0; i < 3; i++) {
 			test.test(String.valueOf(i));

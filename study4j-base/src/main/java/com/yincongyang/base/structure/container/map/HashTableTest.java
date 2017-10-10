@@ -137,7 +137,7 @@ public class HashTableTest {
 		long startTime5 = System.nanoTime();//获取开始时间
 		Iterator<String> it2 = table.keySet().iterator();
 		while (it2.hasNext()) {
-			key = (String) it2.next();// 获取key
+			key = it2.next();// 获取key
 		}
 		long endTime5 = System.nanoTime(); //获取结束时间  
 		logger.info("keySet.Iterator<T> 最后一个值为：{} 程序运行时间：{} ns", table.get(key), (endTime5 - startTime5));
@@ -146,7 +146,7 @@ public class HashTableTest {
 		long startTime6 = System.nanoTime();//获取开始时间
 		Iterator<Integer> it3 = table.values().iterator();
 		while (it3.hasNext()) {
-			value = (Integer) it3.next();// 获取value
+			value = it3.next();// 获取value
 		}
 		long endTime6 = System.nanoTime(); //获取结束时间  
 		logger.info("values.Iterator<T> 最后一个值为：{} 程序运行时间：{} ns", value, (endTime6 - startTime6));
@@ -168,7 +168,7 @@ public class HashTableTest {
 		String key = "";
 		Enumeration<String> enu = table.keys();
 		while (enu.hasMoreElements()) {
-			key = (String) enu.nextElement();
+			key = enu.nextElement();
 			table.remove(key);//Enumeration没有fail-fast机制
 		}
 

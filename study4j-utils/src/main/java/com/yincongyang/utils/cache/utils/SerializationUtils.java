@@ -265,7 +265,7 @@ public class SerializationUtils {
         if (objectData == null) {
             throw new IllegalArgumentException("The byte[] must not be null");
         }
-        return SerializationUtils.<T>deserialize(new ByteArrayInputStream(objectData));
+        return SerializationUtils.deserialize(new ByteArrayInputStream(objectData));
     }
 
     /**

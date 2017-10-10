@@ -10,7 +10,7 @@ public interface CacheStorager<T extends Cacheable> {
 	/**
 	 * 考虑到临界情况,实际缓存的有效时间减去该毫秒数(60秒)
 	 */
-	long CUTMS = 60 * 1000l;
+	long CUTMS = 60 * 1000L;
 
 	/**
 	 * 该key对应的value是全部的缓存key：便于清理缓存

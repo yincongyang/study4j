@@ -137,7 +137,7 @@ public class TreeMapTest {
 			//map.remove(key);//ConcurrentModificationException
 		}
 		long endTime = System.nanoTime(); //获取结束时间  
-		logger.info("foreach(Map.EntrySet) 最后一个值为：{} 程序运行时间：{} ns", value.toString(), (endTime - startTime));
+		logger.info("foreach(Map.EntrySet) 最后一个值为：{} 程序运行时间：{} ns", value, (endTime - startTime));
 
 		//foreach Map.KeySet
 		long startTime1 = System.nanoTime();//获取开始时间

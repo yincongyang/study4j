@@ -150,7 +150,7 @@ public class RedisCacheStorager<T extends Cacheable> implements
 	public void expire(String key,final long duration, final TimeUnit unit) {
 		Jedis jedis = null;
 		try {
-			final long rawTimeout = unit.toMillis(duration)/1000l;
+			final long rawTimeout = unit.toMillis(duration)/ 1000L;
 			jedis = jedisPool.getResource();
 			jedis.expire(key, (int) rawTimeout);
 		} finally {

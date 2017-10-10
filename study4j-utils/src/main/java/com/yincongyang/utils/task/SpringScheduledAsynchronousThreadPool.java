@@ -43,21 +43,19 @@ public class SpringScheduledAsynchronousThreadPool {
 	private double rateLimit;
 
 	/**
-	 * 执行线程池大小
-	 */
-	private int threadPoolSize;
-
-	/**
 	 * 计数器，用来保证异步线程不同时运行
 	 */
 	private AtomicInteger syncCount;
 
 	@PostConstruct
 	public void init() {
-		this.threadPoolSize = 10;
+		/*
+	  执行线程池大小
+	 */
+		int threadPoolSize = 10;
 		this.rateLimit = 3;
-		this.callbackthreadPool = MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(this.threadPoolSize));
-		this.executeThreadPool = MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(this.threadPoolSize));
+		this.callbackthreadPool = MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(threadPoolSize));
+		this.executeThreadPool = MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(threadPoolSize));
 		this.syncCount = new AtomicInteger(0);
 	}
 

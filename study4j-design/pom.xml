@@ -7,7 +7,6 @@
     <artifactId>study4j</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.yincongyang</groupId>
   <artifactId>study4j-design</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>study4j-design</name>

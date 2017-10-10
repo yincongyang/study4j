@@ -21,12 +21,12 @@ import com.yincongyang.utils.cache.storager.RedisCacheStorager;
 public class CacheManager<T extends Cacheable> {
 	protected final CacheStorager<T> cacheStorager;
 	private final ReentrantLock lock = new ReentrantLock();
-	
+
 	/**
 	 * 存储器类型
 	 */
 	private String cacheType;
-	
+
 	/**
 	 * 缓存前缀
 	 */

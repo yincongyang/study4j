@@ -45,7 +45,7 @@ public class ArrayListTest {
 		 * 
 		 * 常用<T> T[] toArray(T[] contents)方法
 		 */
-		ArrayList<Integer> list1 = new ArrayList<Integer>();
+		ArrayList<Integer> list1 = new ArrayList<>();
 		for (int i = 0; i < 100000; i++)
 			list1.add(i);
 		Integer[] resArr = new Integer[0];
@@ -116,14 +116,14 @@ public class ArrayListTest {
 
 	// toArray(T[] contents)调用方式二。最常用！
 	public static Integer[] arrayListToArray2(ArrayList<Integer> v) {
-		Integer[] newText = (Integer[]) v.toArray(new Integer[0]);
+		Integer[] newText = v.toArray(new Integer[0]);
 		return newText;
 	}
 
 	// toArray(T[] contents)调用方式三
 	public static Integer[] arrayListToArray3(ArrayList<Integer> v) {
 		Integer[] newText = new Integer[v.size()];
-		Integer[] newStrings = (Integer[]) v.toArray(newText);
+		Integer[] newStrings = v.toArray(newText);
 		return newStrings;
 	}
 
