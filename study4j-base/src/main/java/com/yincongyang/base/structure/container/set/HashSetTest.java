@@ -2,13 +2,10 @@ package com.yincongyang.base.structure.container.set;
 
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.Sets;
-import com.yincongyang.base.structure.basetype.RangeOfTypes;
 
 /**
  * HashSet测试

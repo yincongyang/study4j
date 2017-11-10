@@ -1,13 +1,13 @@
 package com.yincongyang.base.reflection;
 
 
-import com.yincongyang.base.annotation.HelloAnnotation;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * 反射的简单使用
+ * 更多反射的举例需要参考 设计模式
  * Created by yincongyang on 17/11/9.
  */
 public class School {
