@@ -2,6 +2,7 @@ package com.yincongyang.httpclient.request;
 
 import com.yincongyang.httpclient.TESTURL;
 import com.yincongyang.httpclient.response.StringResponseHandle;
+import org.apache.http.HttpHost;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
@@ -49,7 +50,7 @@ public class HttpPostExample {
             httpPost.setEntity(entity);
 
             //创建代理(代理也是一个URL地址)
-            //HttpHost proxy = new HttpHost("127.0.0.1", 8888);
+            HttpHost proxy = new HttpHost("127.0.0.1", 8888);
             //HttpHost proxy = new HttpHost("172.31.19.108", 3128);
 
             //创建HttpRequest的配置项（主要是一些网络通讯方面的设置：如超时时间，代理等）

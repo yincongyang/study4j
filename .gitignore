@@ -34,4 +34,16 @@
 .Trashes  
 Icon?  
 ehthumbs.db  
-Thumbs.db  
+Thumbs.db
+/.idea/
+/study4j-thread/study4j-thread.iml
+study4j-base/study4j-base.iml
+study4j-design/study4j-design.iml
+study4j-guava/study4j-guava.iml
+study4j-network/target/
+study4j-thread/target/
+study4j-utils/study4j-utils.iml
+study4j.iml
+/.idea/kotlinc.xml
+/study4j-network/study4j-network.iml
+/study4j-springmvc/study4j-springmvc.iml

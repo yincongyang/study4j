@@ -13,6 +13,8 @@
         <module>study4j-guava</module>
         <module>study4j-thread</module>
         <module>study4j-network</module>
+        <module>study4j-security</module>
+        <module>study4j-springmvc</module>
     </modules>
 
     <!-- 和度maven私服地址 start -->

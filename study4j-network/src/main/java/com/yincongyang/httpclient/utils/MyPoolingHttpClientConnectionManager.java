@@ -15,14 +15,23 @@ import java.util.concurrent.Executors;
 
 /**
  * 自定义httpclient连接池
- * 单例模式
+ * <p>
+ * 调用方法：
+ * CloseableHttpClient client = HttpClients
+ * .custom()
+ * .setConnectionManager(MyPoolingHttpClientConnectionManager.INSTANCE)
+ * .build();
+ * <p>
+ * 无需调用client.close()
+ * <p>
  * Created by yincongyang on 17/10/30.
  */
 public class MyPoolingHttpClientConnectionManager {
 
     public static final PoolingHttpClientConnectionManager INSTANCE = MyPoolingHttpClientConnectionManager.build();
 
-    private MyPoolingHttpClientConnectionManager(){}
+    private MyPoolingHttpClientConnectionManager() {
+    }
 
     /**
      * 创建PoolingHttpClientConnectionManager对象
