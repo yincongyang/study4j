@@ -1,11 +1,9 @@
 package com.yincongyang.base.io.bytes;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import org.junit.Test;
+
+import java.io.*;
+import java.net.URL;
 
 /**
  * BufferedInputStream 是缓冲输入流。它继承于FilterInputStream。
@@ -23,6 +21,27 @@ public class BufferedInputStreamTest {
 
 	public static void main(String[] args) {
 		testBufferedInputStream();
+	}
+
+	/**
+	 * 适合读取所有类型的文件
+	 * 读取文件内容：按字节读取
+	 * @throws IOException
+	 */
+	@Test
+	public void readFile() throws IOException{
+		String filePath = "key/test.txt";
+
+		URL url = BufferedInputStreamTest.class.getClassLoader().getResource(filePath);   //证书路径
+		BufferedInputStream in = new BufferedInputStream(new FileInputStream(url.getFile()));
+
+		ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+
+		while (in.available() > 0){
+			buffer.write(in.read());
+		}
+
+		System.out.println(buffer.toString());
 	}
 
 	/**

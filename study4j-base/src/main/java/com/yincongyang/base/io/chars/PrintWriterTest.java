@@ -100,6 +100,8 @@ public class PrintWriterTest {
 			// 将字符'B'追加到输出流中
 			out.append('B').append("CDEF");
 
+			System.out.printf("caw=%s\n", out);
+
 			// 将"CDE is 5" + 回车  写入到输出流中
 			String str = "GHI";
 			int num = 5;

@@ -15,7 +15,7 @@ public class CopyOnWriteArrayListExample {
 
     // list是ArrayList对象时，程序会出错ConcurrentModificationException。
 //    private static List<String> list = new ArrayList<String>();
-    private static List<String> list = new CopyOnWriteArrayList<>();
+    private static List<String> list = new CopyOnWriteArrayList<String>();
     public static void main(String[] args) {
 
         // 同时启动两个线程对list进行操作！

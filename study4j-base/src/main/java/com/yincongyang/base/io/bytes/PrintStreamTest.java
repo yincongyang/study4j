@@ -77,7 +77,7 @@ public class PrintStreamTest {
 	private static void testPrintStreamConstrutor3() {
 		final byte[] arr = { 0x61, 0x62, 0x63, 0x64, 0x65 };
 		try {
-			PrintStream out = new PrintStream("file.txt");
+			PrintStream out = new PrintStream("classpath:file.txt");
 			out.write(arr);
 			out.close();
 		} catch (IOException e) {

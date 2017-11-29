@@ -14,11 +14,20 @@
         <spring.version>4.3.12.RELEASE</spring.version>
         <servlet.version>3.1.0</servlet.version>
         <junit.version>4.12</junit.version>
+        <!-- aop setting -->
+        <aspectj.version>1.7.4</aspectj.version>
+        <cglib.version>2.2.2</cglib.version>
+        <!-- hibernate.validator setting -->
+        <hibernate.validator.version>5.1.1.Final</hibernate.validator.version>
+        <javax.validator.version>1.1.0.Final</javax.validator.version>
+        <javax.el.version>2.2.4</javax.el.version>
+        <!-- environment setting -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
         <!-- spring dependencies start-->
-
         <!-- spring核心包，基础包，其他jar包均依赖该jar包 -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -49,12 +58,6 @@
             <artifactId>spring-oxm</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!-- Spring的面向切面编程，提供AOP（面向切面编程）的实现 -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
         <!-- 这个jar文件包含Web应用开发时，用到Spring框架时所需的核心类，包括自动载入WebApplicationContext特性的类、Struts与JSF集成类、文件上传的支持类、Filter类和大量工具辅助类 -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -67,13 +70,6 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!-- Portlet是区别与Servlet的另外一种web技术
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc-portlet</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        -->
         <!-- 为JDBC,HIBERNATE,JDO和JPA提供的一致性的声明式和简单编程式事务管理-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -93,14 +89,155 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <!-- spring AOP begin -->
+        <!-- Spring的面向切面编程，提供AOP（面向切面编程）的实现 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+        <!-- spring AOP end -->
 
-        <!-- 对于单元测试和集成测试的简单封装 -->
+        <!-- springMVC 转换器 begin-->
+        <!-- controller 默认json转换器-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.10</version>
+        </dependency>
+        <!-- TODO 默认使用jdk自带jaxb解析 xml解析 begin 集成SpringMVC有点问题-->
+        <!-- jackson解析xml
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.8.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.woodstox</groupId>
+            <artifactId>woodstox-core-asl</artifactId>
+            <version>4.4.1</version>
+        </dependency>
+        -->
+        <!-- xml解析 end -->
+        <!-- springMVC 转换器 end-->
+
+        <!-- javaBean validate begin -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax.validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>${javax.el.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>${javax.el.version}</version>
+        </dependency>
+        <!-- javaBean validate end -->
+        <!-- spring dependencies end-->
+
+
+        <!-- 其它常用工具类 begin-->
+        <!-- apache commons utils begin -->
+        <!-- java.lang 增强-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+        <!-- javabean 增强-->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.3</version>
+        </dependency>
+        <!-- apache commons utils end -->
+
+        <!-- alibaba fastjson: JSON/javaBean的相关转化，支持字段的排序，泛型等 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.31</version>
+        </dependency>
+
+        <!-- google guava：主要用于集合类的增强，并发类的增强，缓存等 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+        <!-- 其它常用工具类 end-->
+
+        <!-- log begin-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <!-- log end-->
+
+        <!-- test begin -->
+        <!-- junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- spring-test -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!-- spring dependencies end-->
+        <!-- json-path -->
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>2.2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path-assert</artifactId>
+            <version>2.2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- test end -->
 
         <!-- Servlet API 仅编译时需要，发布时不需要，因为容器(tomcat)已经提供了该jar包 -->
         <dependency>
@@ -109,15 +246,6 @@
             <version>${servlet.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- junit 依赖 -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
     <build>
         <finalName>study4j-springmvc</finalName>

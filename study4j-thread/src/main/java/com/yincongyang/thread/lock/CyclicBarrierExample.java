@@ -31,7 +31,7 @@ public class CyclicBarrierExample {
 
                 // cb的参与者数量等于5时，才继续往后执行
                 System.out.println(Thread.currentThread().getName() + " continued.");
-            } catch (BrokenBarrierException | InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
