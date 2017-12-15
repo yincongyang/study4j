@@ -13,6 +13,14 @@
 
 
     <dependencies>
+
+        <!-- apache commons codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
+
         <!-- log begin-->
         <dependency>
             <groupId>log4j</groupId>

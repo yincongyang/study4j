@@ -3,6 +3,8 @@ package com.yincongyang.base.proxy.staticstate;
 import com.yincongyang.base.proxy.Account;
 
 /**
+ * TODO：挪到design设计模式说明中
+ *
  * Created by yincongyang on 17/11/10.
  */
 public class AccountProxy implements Account {

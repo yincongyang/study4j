@@ -1,7 +1,6 @@
 package com.yincongyang.spring.aop;
 
 import com.alibaba.fastjson.JSON;
-import com.yincongyang.spring.controller.JsonController;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -18,7 +17,7 @@ import java.lang.reflect.Modifier;
 @Component
 @Aspect
 public class ControllerLogAspect {
-    private static Logger logger = LoggerFactory.getLogger(JsonController.class);
+    private static Logger logger = LoggerFactory.getLogger(ControllerLogAspect.class);
 
     /**
      * 定义一个切入点(集合)：
@@ -38,7 +37,7 @@ public class ControllerLogAspect {
     public void doBefore(JoinPoint joinPoint){
         logger.info("前置通知");
         logger.info("目标方法名为:" + joinPoint.getSignature().getName());
-        logger.info("目标方法所属类的简单类名:" +        joinPoint.getSignature().getDeclaringType().getSimpleName());
+        logger.info("目标方法所属类的简单类名:" + joinPoint.getSignature().getDeclaringType().getSimpleName());
         logger.info("目标方法所属类的类名:" + joinPoint.getSignature().getDeclaringTypeName());
         logger.info("目标方法声明类型:" + Modifier.toString(joinPoint.getSignature().getModifiers()));
         //获取传入目标方法的参数
