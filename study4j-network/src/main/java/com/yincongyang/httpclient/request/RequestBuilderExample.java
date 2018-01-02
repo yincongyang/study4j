@@ -48,7 +48,7 @@ public class RequestBuilderExample {
 
         CloseableHttpClient client = HttpClients.createDefault();
         try {
-            logger.info("返回报文：{}", client.execute(request, StringResponseHandle.INSTANCE));
+            logger.info("返回报文：{}", client.execute(request, StringResponseHandle.getInstance()));
         } finally {
             client.close();
         }

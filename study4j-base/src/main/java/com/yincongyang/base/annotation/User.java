@@ -1,6 +1,7 @@
 package com.yincongyang.base.annotation;
 
 /**
+ *
  * Created by yincongyang on 17/11/9.
  */
 @HelloAnnotation(value = "classValue",key = "classKey")

@@ -25,28 +25,33 @@ study4j/(父工程)
      |--container(线程安全的集合类)
      |--lock(JUC包中的锁)
      |--pool(线程池)
-  |--study4j-utils/(常用工具类的使用：如guava)
+  |--study4j-springmvc/(springmvc、spring的使用和总结)
+  |--study4j-utils/(常用工具类的使用：如guava，apache-commons)
+  |--study4j-security/(java安全体系的总结：如加解密，摘要，编码)
 ```
 
 
 ## 文档和代码
-- [Java 基础类型总结](./study4j-base/src/main/java/com/yincongyang/base/structure/基本数据类型.md)：[相关代码](./study4j-base/src/main/java/com/yincongyang/base/structure/basetype)
-- [Java 集合总结](./study4j-base/src/main/java/com/yincongyang/base/structure/Java集合总结.md)：[相关代码](./study4j-base/src/main/java/com/yincongyang/base/structure/container)
-- [Java IO总结](./study4j-base/src/main/java/com/yincongyang/base/io/readme.md)：[相关代码](https://github.com/yincongyang/study4j/blob/master/study4j-base/src/main/java/com/yincongyang/base/io)
-- Java Thread总结
+- Java 基础总结
+    - [Java 基础类型总结](./study4j-base/src/main/java/com/yincongyang/base/structure/基本数据类型.md)：[相关代码](./study4j-base/src/main/java/com/yincongyang/base/structure/basetype)
+    - [Java 集合总结](./study4j-base/src/main/java/com/yincongyang/base/structure/Java集合总结.md)：[相关代码](./study4j-base/src/main/java/com/yincongyang/base/structure/container)
+    - [Java IO总结](./study4j-base/src/main/java/com/yincongyang/base/io/readme.md)：[相关代码](./study4j-base/src/main/java/com/yincongyang/base/io)
+    - [Java 反射总结](./study4j-base/src/main/java/com/yincongyang/base/reflection/Java反射详解.md):[相关代码](./study4j-base/src/main/java/com/yincongyang/base/reflection)
+    - [Java 注解原理](./study4j-base/src/main/java/com/yincongyang/base/annotation/Java注解使用详解.md):[相关代码](./study4j-base/src/main/java/com/yincongyang/base/annotation)
+- Java 多线程基础总结
     - [基础概念](./study4j-thread/src/main/java/com/yincongyang/thread/concept)
     - [多线程基础](./study4j-thread/src/main/java/com/yincongyang/thread/多线程基础.md)：[相关代码](./study4j-thread/src/main/java/com/yincongyang/thread/base)
     - [原子类](./study4j-thread/src/main/java/com/yincongyang/thread/原子类.md)：[相关代码](./study4j-thread/src/main/java/com/yincongyang/thread/atomic)
     - [并发容器](./study4j-thread/src/main/java/com/yincongyang/thread/并发容器.md)：[相关代码](./study4j-thread/src/main/java/com/yincongyang/thread/container)
     - [并发锁](./study4j-thread/src/main/java/com/yincongyang/thread/并发锁.md)：[相关代码](./study4j-thread/src/main/java/com/yincongyang/thread/lock)
     - [线程池](./study4j-thread/src/main/java/com/yincongyang/thread/线程池.md)：[相关代码](./study4j-thread/src/main/java/com/yincongyang/thread/pool)
+- Java 网络编程总结
+    - [httpClient4.5.X使用与总结](./study4j-network/src/main/java/com/yincongyang/httpclient/httpclient教程与示例.md):[相关代码](./study4j-network/src/main/java/com/yincongyang/httpclient)
+
 
 
 ## 读书笔记
 - [Java并发编程实战](./study4j-thread/src/main/java/com/yincongyang/thread/《Java并发编程实战》读书笔记.md)
-- Think in java
-- Effective Java2
-- Guava官方文档
 
 
 ## TODO LIST
@@ -55,11 +60,9 @@ study4j/(父工程)
 - java基础：NIO
 - 缓存：redis/codis,内存缓存,文件缓存
 - guava：集合，IO，常用工具类
-- 网络编程：TCP/IP，HttpClient，webservice
+- 网络编程：webservice
 - 并发编程：多线程基础，线程安全，调试，线程监控
 
-### DOING
-HttpClient，TCP/IP
 
 ### DONE
 - [ ] java基础

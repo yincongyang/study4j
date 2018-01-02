@@ -2,12 +2,11 @@ package com.yincongyang.base.annotation;
 
 import org.junit.Test;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- *
+ * 运用发射去获取类上的注解，并获取其内容
  * Created by yincongyang on 17/11/9.
  */
 

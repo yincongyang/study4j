@@ -33,7 +33,7 @@ public class HttpsExample {
         CloseableHttpClient client = HttpClients.createDefault();
 
         try{
-            logger.info("返回报文：{}", client.execute(httpPost, StringResponseHandle.INSTANCE));
+            logger.info("返回报文：{}", client.execute(httpPost, StringResponseHandle.getInstance()));
         }finally {
             client.close();
         }
@@ -52,7 +52,7 @@ public class HttpsExample {
                 .build();
 
         try{
-            logger.info("返回报文：{}", client.execute(httpGet, StringResponseHandle.INSTANCE));
+            logger.info("返回报文：{}", client.execute(httpGet, StringResponseHandle.getInstance()));
         }catch (IOException e) {
             e.printStackTrace();
         }finally {

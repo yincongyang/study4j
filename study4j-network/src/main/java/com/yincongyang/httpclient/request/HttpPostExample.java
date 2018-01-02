@@ -65,7 +65,7 @@ public class HttpPostExample {
 
             //发送http请求，并指定返回报文处理器，也可以不指定，直接返回HttpResponse。
             //推荐使用ResponseHandle
-            logger.info("返回报文：{}", client.execute(httpPost, StringResponseHandle.INSTANCE));
+            logger.info("返回报文：{}", client.execute(httpPost, StringResponseHandle.getInstance()));
 
 
             long endTime = System.currentTimeMillis();

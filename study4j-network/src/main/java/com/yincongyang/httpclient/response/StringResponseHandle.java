@@ -14,7 +14,6 @@ import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 恶汉式 单例模式
  * Created by yincongyang on 17/9/28.
  */
 public class StringResponseHandle implements ResponseHandler<String>{
@@ -22,14 +21,23 @@ public class StringResponseHandle implements ResponseHandler<String>{
     private final static Logger logger = LoggerFactory.getLogger(StringResponseHandle.class);
 
     //单例模式
-    public final static StringResponseHandle INSTANCE = new StringResponseHandle();
+    private static StringResponseHandle instance = new StringResponseHandle();
 
     private AtomicInteger httpCount = new AtomicInteger(0);
 
-    private StringResponseHandle(){
-
+    public static StringResponseHandle getInstance() {
+        return instance;
     }
 
+    private StringResponseHandle(){
+    }
+
+    /**
+     * 自动解析报文编码
+     * @param response
+     * @return
+     * @throws IOException
+     */
     @Override
     public String handleResponse(HttpResponse response) throws IOException {
         int status = response.getStatusLine().getStatusCode();
