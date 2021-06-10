@@ -8,7 +8,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-    <module>study4j-utils</module>
     <module>study4j-springboot</module>
     <module>study4j-springcloud</module>
     <module>study4j-jdk</module>
