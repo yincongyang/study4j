@@ -12,7 +12,7 @@
   <artifactId>study4j-springboot-springmvc</artifactId>
 
   <properties>
-    <spring.version>5.3.8</spring.version>
+    <spring.version>5.3.14</spring.version>
   </properties>
 
   <dependencies>
